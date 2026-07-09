@@ -1,0 +1,24 @@
+---
+layout: base.njk
+---
+<main>
+  <div class="crumb"><a href="/index.html">Home</a> &nbsp;/&nbsp; <a href="/{{ category }}.html">{{ category | capitalize }}</a> &nbsp;/&nbsp; {{ title }}</div>
+  <section class="page-hero">
+    <span class="eyebrow">{{ category | capitalize }}</span>
+    <h1>{{ title }}</h1>
+    {% if date %}<p style="font-size:13px;letter-spacing:.05em;color:#8a8875;text-transform:uppercase;">{{ date | readableDate }}</p>{% endif %}
+  </section>
+  <section class="about-body" style="padding-top:0;">
+    {{ content | safe }}
+  </section>
+  <section class="signup" id="signup">
+    <span class="eyebrow">Stay Encouraged</span>
+    <h2>Loved this post?</h2>
+    <p>Join the list for more encouragement like this, straight to your inbox.</p>
+    <form class="signup-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit" class="btn btn-solid">Subscribe</button>
+    </form>
+    <p class="signup-note">No spam, ever. Unsubscribe anytime.</p>
+  </section>
+</main>
