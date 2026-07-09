@@ -117,7 +117,7 @@ signupText: Join for weekly encouragement, new recipes, and free printables — 
     <div class="feat-grid">
       {% set recentPosts = collections.posts | reverse %}
       {% if recentPosts | length %}
-        {% for post in recentPosts limit 3 %}
+        {% for post in recentPosts | limit(3) %}
         <article class="feat-card">
           <div class="feat-img a"></div>
           <div class="feat-body">
