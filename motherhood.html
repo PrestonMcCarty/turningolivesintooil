@@ -1,0 +1,57 @@
+---
+layout: base.njk
+title: Motherhood
+description: Pregnancy, newborn life, parenting, and family routines.
+permalink: motherhood.html
+category: motherhood
+tagline: Pregnancy, Newborns & Parenting
+heroDesc: Honest encouragement for pregnancy, newborn life, and parenting with grace instead of perfection — because motherhood is its own pressing season.
+placeholders:
+  - title: Pregnancy
+    desc: Faith-filled encouragement for the waiting, the worrying, and the wonder of it.
+  - title: Newborn Life
+    desc: Gentle guidance for the fourth trimester fog, one feeding at a time.
+  - title: Parenting
+    desc: Practical, grace-filled thoughts on raising kids without losing yourself.
+  - title: Breastfeeding
+    desc: Real talk and encouragement for the feeding journey, whatever yours looks like.
+  - title: Family Routines
+    desc: Simple rhythms that bring peace to busy households.
+---
+<main>
+  <div class="crumb"><a href="/index.html">Home</a> &nbsp;/&nbsp; {{ title }}</div>
+  <section class="page-hero">
+    <span class="eyebrow">{{ tagline }}</span>
+    <h1>{{ title }}</h1>
+    <p>{{ heroDesc }}</p>
+  </section>
+  <section class="coming-grid">
+    {% set catPosts = collections.posts | byCategory(category) %}
+    {% if catPosts | length %}
+      {% for post in catPosts %}
+      <a class="coming-card" href="{{ post.url }}" style="display:block;">
+        <h3>{{ post.data.title }}</h3>
+        <p>{{ post.data.excerpt }}</p>
+      </a>
+      {% endfor %}
+    {% else %}
+      {% for item in placeholders %}
+      <div class="coming-card">
+        <span class="coming-badge">Coming Soon</span>
+        <h3>{{ item.title }}</h3>
+        <p>{{ item.desc }}</p>
+      </div>
+      {% endfor %}
+    {% endif %}
+  </section>
+  <section class="signup" id="signup">
+    <span class="eyebrow">Stay Encouraged</span>
+    <h2>Be the first to know</h2>
+    <p>New {{ title | lower }} posts are on the way. Join the list and I'll let you know the moment they're up.</p>
+    <form class="signup-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit" class="btn btn-solid">Subscribe</button>
+    </form>
+    <p class="signup-note">No spam, ever. Unsubscribe anytime.</p>
+  </section>
+</main>

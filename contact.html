@@ -1,0 +1,28 @@
+---
+layout: base.njk
+title: Contact
+description: Get in touch with Turning Olives Into Oil.
+permalink: contact.html
+---
+<main>
+  <div class="contact-wrap">
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:14px;">Get In Touch</span>
+    <h1>Let's Talk</h1>
+    <p class="lede">Have a question, a prayer request, or just want to say hello? I'd love to hear from you.</p>
+    <form class="contact-form-full">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Share what's on your heart..." required></textarea>
+
+      <button type="submit" class="btn btn-solid" style="width:100%;">Send Message</button>
+      <div class="tip-box">
+        Heads up: this form isn't connected to your email yet. Static sites need a small free service (like Formspree) to actually deliver submissions to your inbox — I can help you set that up when you're ready.
+      </div>
+    </form>
+  </div>
+</main>
