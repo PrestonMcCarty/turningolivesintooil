@@ -14,6 +14,11 @@ module.exports = function (eleventyConfig) {
     return posts.filter((p) => p.data.category === category);
   });
 
+  eleventyConfig.addFilter("limit", (arr, n) => {
+    if (!arr) return [];
+    return arr.slice(0, n);
+  });
+
   return {
     htmlTemplateEngine: "njk",
     markdownTemplateEngine: "njk",
