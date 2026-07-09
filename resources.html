@@ -3,56 +3,51 @@ layout: base.njk
 title: Resources
 description: Free printables and resources for faith, home, and family.
 permalink: resources.html
+eyebrow: Free For You
+heroHeading: Printables to Ease Your Week
+heroIntro: Simple, free tools to bring a little more peace into your everyday — no strings attached, just something to help.
+items:
+  - title: Prayer Journal
+    desc: A guided space for your prayers, praises, and answered prayers.
+    link: ""
+  - title: Bible Reading Tracker
+    desc: A simple way to stay consistent in scripture, one day at a time.
+    link: ""
+  - title: Weekly Meal Planner
+    desc: Plan healthy, budget-friendly meals without the nightly scramble.
+    link: ""
+  - title: Simple Cleaning Checklist
+    desc: A realistic routine to keep your home tidy without the overwhelm.
+    link: ""
+  - title: Family Routine Planner
+    desc: Build rhythms that bring calm to busy family days.
+    link: ""
+  - title: Scripture Cards
+    desc: Printable verse cards to keep hope close all through your day.
+    link: ""
+  - title: Weekly Planner
+    desc: A gentle, all-in-one planner for your week ahead.
+    link: ""
 ---
 <main>
-  <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Resources</div>
+  <div class="crumb"><a href="/index.html">Home</a> &nbsp;/&nbsp; Resources</div>
   <section class="page-hero">
-    <span class="eyebrow">Free For You</span>
-    <h1>Printables to Ease Your Week</h1>
-    <p>Simple, free tools to bring a little more peace into your everyday — no strings attached, just something to help.</p>
+    <span class="eyebrow">{{ eyebrow }}</span>
+    <h1>{{ heroHeading }}</h1>
+    <p>{{ heroIntro }}</p>
   </section>
   <section class="resource-grid">
+    {% for item in items %}
     <div class="resource-card">
       <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Prayer Journal</h3>
-      <p>A guided space for your prayers, praises, and answered prayers.</p>
-      <span class="resource-btn">Coming Soon</span>
+      <h3>{{ item.title }}</h3>
+      <p>{{ item.desc }}</p>
+      {% if item.link %}
+        <a href="{{ item.link }}" class="resource-btn" style="cursor:pointer;">Download</a>
+      {% else %}
+        <span class="resource-btn">Coming Soon</span>
+      {% endif %}
     </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Bible Reading Tracker</h3>
-      <p>A simple way to stay consistent in scripture, one day at a time.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Weekly Meal Planner</h3>
-      <p>Plan healthy, budget-friendly meals without the nightly scramble.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Simple Cleaning Checklist</h3>
-      <p>A realistic routine to keep your home tidy without the overwhelm.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Family Routine Planner</h3>
-      <p>Build rhythms that bring calm to busy family days.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Scripture Cards</h3>
-      <p>Printable verse cards to keep hope close all through your day.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
-    <div class="resource-card">
-      <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 6h20v28H10z" stroke="currentColor" stroke-width="1.4"/><path d="M15 14h10M15 20h10M15 26h6" stroke="currentColor" stroke-width="1.4"/></svg>
-      <h3>Weekly Planner</h3>
-      <p>A gentle, all-in-one planner for your week ahead.</p>
-      <span class="resource-btn">Coming Soon</span>
-    </div>
+    {% endfor %}
   </section>
 </main>

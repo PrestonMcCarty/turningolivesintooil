@@ -3,12 +3,15 @@ layout: base.njk
 title: Contact
 description: Get in touch with Turning Olives Into Oil.
 permalink: contact.html
+eyebrow: Get In Touch
+heroHeading: Let's Talk
+heroIntro: Have a question, a prayer request, or just want to say hello? I'd love to hear from you.
 ---
 <main>
   <div class="contact-wrap">
-    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:14px;">Get In Touch</span>
-    <h1>Let's Talk</h1>
-    <p class="lede">Have a question, a prayer request, or just want to say hello? I'd love to hear from you.</p>
+    <span class="eyebrow" style="display:block;text-align:center;margin-bottom:14px;">{{ eyebrow }}</span>
+    <h1>{{ heroHeading }}</h1>
+    <p class="lede">{{ heroIntro }}</p>
     <form class="contact-form-full">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your name" required>

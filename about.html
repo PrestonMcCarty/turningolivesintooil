@@ -3,37 +3,48 @@ layout: base.njk
 title: About
 description: The story behind Turning Olives Into Oil.
 permalink: about.html
+eyebrow: Behind the Blog
+heroHeading: "Hi, I'm so glad you're here."
+heroIntro: "Turning Olives Into Oil started in one of my own pressing seasons — the kind that leaves you tired, unsure, and quietly asking God what any of it is for. This is the space I wish I'd had then: honest, hope-filled, and never overwhelming."
+photo: ""
+bodyParagraphs:
+  - "[Your story goes here.] Share a little about your faith journey, your family, and what led you to start this blog. Keep it warm and personal — readers connect with the real, unpolished parts as much as the pretty ones."
+  - "Whether you're here for a devotional between diaper changes, a simple dinner recipe, or just five quiet minutes with your coffee, I hope you leave a little more encouraged than when you arrived."
+values:
+  - title: Hope-Filled
+    desc: Every post is written to remind you that this season, whatever it holds, isn't wasted.
+  - title: Practical
+    desc: Real tools and routines you can actually use this week, not just admire.
+  - title: Biblically Grounded
+    desc: Scripture isn't an add-on here — it's the foundation everything else is built on.
+  - title: Never Judgmental
+    desc: Come as you are, in whatever season you're in. You'll always be welcome here.
 ---
 <main>
-  <div class="crumb"><a href="index.html">Home</a> &nbsp;/&nbsp; About</div>
+  <div class="crumb"><a href="/index.html">Home</a> &nbsp;/&nbsp; About</div>
   <section class="about-hero">
-    <div class="about-photo" role="img" aria-label="Photo placeholder"></div>
+    {% if photo %}
+      <img src="{{ photo }}" alt="Photo" class="about-photo" style="object-fit:cover;">
+    {% else %}
+      <div class="about-photo" role="img" aria-label="Photo placeholder"></div>
+    {% endif %}
     <div>
-      <span class="eyebrow">Behind the Blog</span>
-      <h1>Hi, I'm so glad you're here.</h1>
-      <p>Turning Olives Into Oil started in one of my own pressing seasons — the kind that leaves you tired, unsure, and quietly asking God what any of it is for. This is the space I wish I'd had then: honest, hope-filled, and never overwhelming.</p>
+      <span class="eyebrow">{{ eyebrow }}</span>
+      <h1>{{ heroHeading }}</h1>
+      <p>{{ heroIntro }}</p>
     </div>
   </section>
   <section class="about-body">
-    <p>[Your story goes here.] Share a little about your faith journey, your family, and what led you to start this blog. Keep it warm and personal — readers connect with the real, unpolished parts as much as the pretty ones.</p>
-    <p>Whether you're here for a devotional between diaper changes, a simple dinner recipe, or just five quiet minutes with your coffee, I hope you leave a little more encouraged than when you arrived.</p>
+    {% for para in bodyParagraphs %}
+    <p>{{ para }}</p>
+    {% endfor %}
   </section>
   <section class="about-values">
+    {% for v in values %}
     <div class="val">
-      <h4>Hope-Filled</h4>
-      <p>Every post is written to remind you that this season, whatever it holds, isn't wasted.</p>
+      <h4>{{ v.title }}</h4>
+      <p>{{ v.desc }}</p>
     </div>
-    <div class="val">
-      <h4>Practical</h4>
-      <p>Real tools and routines you can actually use this week, not just admire.</p>
-    </div>
-    <div class="val">
-      <h4>Biblically Grounded</h4>
-      <p>Scripture isn't a add-on here — it's the foundation everything else is built on.</p>
-    </div>
-    <div class="val">
-      <h4>Never Judgmental</h4>
-      <p>Come as you are, in whatever season you're in. You'll always be welcome here.</p>
-    </div>
+    {% endfor %}
   </section>
 </main>
