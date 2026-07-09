@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "posts"
+    label: "Blog Posts"
+    label_singular: "Post"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Category"
+        name: "category"
+        widget: "select"
+        options:
+          - { label: "Faith", value: "faith" }
+          - { label: "Motherhood", value: "motherhood" }
+          - { label: "Homemaking", value: "homemaking" }
+          - { label: "Wellness", value: "wellness" }
+          - { label: "Recipes", value: "recipes" }
+      - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "One or two sentences shown on the category page." }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "hidden", default: ["posts"] }

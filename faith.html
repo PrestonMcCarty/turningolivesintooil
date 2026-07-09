@@ -26,8 +26,8 @@ placeholders:
     <p>{{ heroDesc }}</p>
   </section>
   <section class="coming-grid">
-    {% set catPosts = collections.posts | byCategory(category) %}
-    {% if catPosts | length %}
+    {% assign catPosts = collections.posts | byCategory: category %}
+    {% if catPosts.size > 0 %}
       {% for post in catPosts %}
       <a class="coming-card" href="{{ post.url }}" style="display:block;">
         <h3>{{ post.data.title }}</h3>
@@ -47,7 +47,7 @@ placeholders:
   <section class="signup" id="signup">
     <span class="eyebrow">Stay Encouraged</span>
     <h2>Be the first to know</h2>
-    <p>New {{ title | lower }} posts are on the way. Join the list and I'll let you know the moment they're up.</p>
+    <p>New {{ title | downcase }} posts are on the way. Join the list and I'll let you know the moment they're up.</p>
     <form class="signup-form">
       <input type="email" placeholder="Your email address" required>
       <button type="submit" class="btn btn-solid">Subscribe</button>
