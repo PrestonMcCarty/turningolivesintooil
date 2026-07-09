@@ -23,7 +23,6 @@ collections:
           - { label: "Motherhood", value: "motherhood" }
           - { label: "Homemaking", value: "homemaking" }
           - { label: "Wellness", value: "wellness" }
-          - { label: "Recipes", value: "recipes" }
       - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "One or two sentences shown on the category page." }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["posts"] }
@@ -39,7 +38,7 @@ collections:
         fields:
           - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
           - { label: "title", name: "title", widget: "hidden", default: "Home" }
-          - { label: "description", name: "description", widget: "hidden", default: "A quiet corner of the internet for Christian women — faith, motherhood, homemaking, wellness, and recipes for every pressing season." }
+          - { label: "description", name: "description", widget: "hidden", default: "A quiet corner of the internet for Christian women — faith, motherhood, homemaking, and wellness for every pressing season." }
           - { label: "permalink", name: "permalink", widget: "hidden", default: "index.html" }
           - { label: "Hero Eyebrow (small text above headline)", name: "heroEyebrow", widget: "string" }
           - { label: "Hero Headline (first line)", name: "heroHeadingPre", widget: "string" }
@@ -108,3 +107,79 @@ collections:
           - { label: "Eyebrow", name: "eyebrow", widget: "string" }
           - { label: "Heading", name: "heroHeading", widget: "string" }
           - { label: "Intro Text", name: "heroIntro", widget: "text" }
+
+      - name: "faith"
+        label: "Faith Category Page"
+        file: "faith.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Faith" }
+          - { label: "description", name: "description", widget: "hidden", default: "Devotionals, Bible studies, prayer, and scripture encouragement." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "faith.html" }
+          - { label: "category", name: "category", widget: "hidden", default: "faith" }
+          - { label: "Tagline (small text above heading)", name: "tagline", widget: "string" }
+          - { label: "Intro Text", name: "heroDesc", widget: "text" }
+          - label: "Coming Soon Cards"
+            name: "placeholders"
+            widget: "list"
+            hint: "These only show until you've published real posts in this category — then real posts take over automatically."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "motherhood"
+        label: "Motherhood Category Page"
+        file: "motherhood.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Motherhood" }
+          - { label: "description", name: "description", widget: "hidden", default: "Pregnancy, newborn life, parenting, and family routines." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "motherhood.html" }
+          - { label: "category", name: "category", widget: "hidden", default: "motherhood" }
+          - { label: "Tagline (small text above heading)", name: "tagline", widget: "string" }
+          - { label: "Intro Text", name: "heroDesc", widget: "text" }
+          - label: "Coming Soon Cards"
+            name: "placeholders"
+            widget: "list"
+            hint: "These only show until you've published real posts in this category — then real posts take over automatically."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "homemaking"
+        label: "Homemaking Category Page"
+        file: "homemaking.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Homemaking" }
+          - { label: "description", name: "description", widget: "hidden", default: "Cleaning routines, organization, hospitality, and simple living." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "homemaking.html" }
+          - { label: "category", name: "category", widget: "hidden", default: "homemaking" }
+          - { label: "Tagline (small text above heading)", name: "tagline", widget: "string" }
+          - { label: "Intro Text", name: "heroDesc", widget: "text" }
+          - label: "Coming Soon Cards"
+            name: "placeholders"
+            widget: "list"
+            hint: "These only show until you've published real posts in this category — then real posts take over automatically."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "wellness"
+        label: "Wellness Category Page"
+        file: "wellness.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Wellness" }
+          - { label: "description", name: "description", widget: "hidden", default: "Healthy habits, gentle movement, nutrition, and self-care." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "wellness.html" }
+          - { label: "category", name: "category", widget: "hidden", default: "wellness" }
+          - { label: "Tagline (small text above heading)", name: "tagline", widget: "string" }
+          - { label: "Intro Text", name: "heroDesc", widget: "text" }
+          - label: "Coming Soon Cards"
+            name: "placeholders"
+            widget: "list"
+            hint: "These only show until you've published real posts in this category — then real posts take over automatically."
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
