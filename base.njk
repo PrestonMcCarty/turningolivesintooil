@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} — Turning Olives Into Oil</title>
+<meta name="description" content="{{ description or 'A quiet corner of the internet for Christian women — faith, motherhood, homemaking, wellness, and recipes for every pressing season.' }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+{% include "style-tag.njk" %}
+</head>
+<body>
+{% include "header.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+  }
+</script>
+</body>
+</html>
