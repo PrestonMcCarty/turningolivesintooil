@@ -27,3 +27,84 @@ collections:
       - { label: "Short Excerpt", name: "excerpt", widget: "text", hint: "One or two sentences shown on the category page." }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "hidden", default: ["posts"] }
+
+  - name: "pages"
+    label: "Site Pages"
+    editor:
+      preview: false
+    files:
+      - name: "home"
+        label: "Home Page"
+        file: "index.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Home" }
+          - { label: "description", name: "description", widget: "hidden", default: "A quiet corner of the internet for Christian women — faith, motherhood, homemaking, wellness, and recipes for every pressing season." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "index.html" }
+          - { label: "Hero Eyebrow (small text above headline)", name: "heroEyebrow", widget: "string" }
+          - { label: "Hero Headline (first line)", name: "heroHeadingPre", widget: "string" }
+          - { label: "Hero Headline (emphasized word/phrase)", name: "heroHeadingEm", widget: "string" }
+          - { label: "Hero Subtext", name: "heroLede", widget: "text" }
+          - { label: "Mission Eyebrow", name: "missionEyebrow", widget: "string" }
+          - { label: "Mission Heading", name: "missionHeading", widget: "string" }
+          - { label: "Mission Text", name: "missionText", widget: "text" }
+          - { label: "Resources Teaser Eyebrow", name: "resourcesEyebrow", widget: "string" }
+          - { label: "Resources Teaser Heading", name: "resourcesHeading", widget: "string" }
+          - { label: "Resources Teaser Text", name: "resourcesText", widget: "text" }
+          - { label: "Signup Eyebrow", name: "signupEyebrow", widget: "string" }
+          - { label: "Signup Heading", name: "signupHeading", widget: "string" }
+          - { label: "Signup Text", name: "signupText", widget: "text" }
+
+      - name: "about"
+        label: "About Page"
+        file: "about.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "About" }
+          - { label: "description", name: "description", widget: "hidden", default: "The story behind Turning Olives Into Oil." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "about.html" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heroHeading", widget: "string" }
+          - { label: "Intro Paragraph", name: "heroIntro", widget: "text" }
+          - { label: "Photo", name: "photo", widget: "image", required: false }
+          - label: "Story Paragraphs"
+            name: "bodyParagraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - label: "Brand Values"
+            name: "values"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+
+      - name: "resources"
+        label: "Resources Page"
+        file: "resources.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Resources" }
+          - { label: "description", name: "description", widget: "hidden", default: "Free printables and resources for faith, home, and family." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "resources.html" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heroHeading", widget: "string" }
+          - { label: "Intro Text", name: "heroIntro", widget: "text" }
+          - label: "Resource Items"
+            name: "items"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Download Link (leave blank for Coming Soon)", name: "link", widget: "string", required: false }
+
+      - name: "contact"
+        label: "Contact Page"
+        file: "contact.html"
+        fields:
+          - { label: "layout", name: "layout", widget: "hidden", default: "base.njk" }
+          - { label: "title", name: "title", widget: "hidden", default: "Contact" }
+          - { label: "description", name: "description", widget: "hidden", default: "Get in touch with Turning Olives Into Oil." }
+          - { label: "permalink", name: "permalink", widget: "hidden", default: "contact.html" }
+          - { label: "Eyebrow", name: "eyebrow", widget: "string" }
+          - { label: "Heading", name: "heroHeading", widget: "string" }
+          - { label: "Intro Text", name: "heroIntro", widget: "text" }
