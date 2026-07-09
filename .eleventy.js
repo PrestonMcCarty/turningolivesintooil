@@ -1,6 +1,10 @@
 const { DateTime } = require("luxon");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.ignores.add(".netlify/**");
+  eleventyConfig.ignores.add("_site/**");
+  eleventyConfig.ignores.add("node_modules/**");
+
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("admin");
 
