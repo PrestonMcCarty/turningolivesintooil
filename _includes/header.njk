@@ -13,5 +13,55 @@
       <a href="/about.html">About</a>
     </nav>
     <a href="/index.html#signup" class="nav-cta">Join the Journey</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+      <span class="menu-bar"></span>
+    </button>
   </div>
 </header>
+
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<aside class="mobile-menu" id="mobile-menu" aria-label="Site menu">
+  <button class="mobile-menu-close" aria-label="Close menu">&times;</button>
+  <nav class="mobile-links">
+    <a href="/faith.html">Faith</a>
+    <a href="/motherhood.html">Motherhood</a>
+    <a href="/homemaking.html">Homemaking</a>
+    <a href="/wellness.html">Wellness</a>
+    <a href="/resources.html">Resources</a>
+    <a href="/about.html">About</a>
+  </nav>
+  <a href="/index.html#signup" class="mobile-cta">Join the Journey</a>
+</aside>
+
+<script>
+  (function () {
+    var toggle = document.querySelector('.menu-toggle');
+    var menu = document.getElementById('mobile-menu');
+    var overlay = document.getElementById('mobile-menu-overlay');
+    var closeBtn = menu ? menu.querySelector('.mobile-menu-close') : null;
+    if (!toggle || !menu || !overlay) return;
+    function openMenu() {
+      menu.classList.add('open');
+      overlay.classList.add('show');
+      document.body.style.overflow = 'hidden';
+      toggle.setAttribute('aria-expanded', 'true');
+    }
+    function closeMenu() {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+      document.body.style.overflow = '';
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+    toggle.addEventListener('click', openMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+    menu.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  })();
+</script>
